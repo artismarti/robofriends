@@ -7,10 +7,13 @@ const App = () => {
   const [searchField, setSearchField] = useState('')
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => setRobots(users));
-  })
+    async function fetchRobots() {
+      let data = await (await fetch('https://jsonplaceholder.typicode.com/users')).json()
+      setRobots(data)
+    }
+    fetchRobots();
+  },[]) 
+
 
   const onSearchChange = (e) => {
     e.preventDefault()
