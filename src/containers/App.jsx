@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import CardList from './CardList'
-import SearchBox from './SearchBox'
+import CardList from '../components/CardList'
+import SearchBox from '../components/SearchBox'
+import './App.css'
 
 const App = () => {
   const [robots, setRobots] = useState([])
@@ -25,7 +26,7 @@ const App = () => {
   })
   return (
     <div className='tc'>
-      <h1>Robofriends</h1>
+      <h1 className='f1'>Robofriends</h1>
       <div>
         <SearchBox handleSearch={onSearchChange}/>
       </div>
