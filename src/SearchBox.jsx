@@ -1,23 +1,15 @@
-import React, {useState} from 'react';
+import React from "react";
 
-const SearchBox = () => {
-
-  const [searchText, setSearchText] = useState("")
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearchText(e.target.value)
-    console.log(searchText)
-  }
+const SearchBox = ({ searchField, handleSearch }) => {
   return (
-    <div>
+    <div className="pa2">
       <input
         className="pa3 ba b--light-green bg-lightest-blue"
         type="search"
-        value={searchText}
         placeholder="Enter Robot Name"
-        onChange={handleSearch} />
+        onChange={handleSearch}
+      />
     </div>
-  )
-}
-
+  );
+};
 export default SearchBox;
